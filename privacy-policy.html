@@ -1,98 +1,113 @@
 <!DOCTYPE html>
+<!-- Sinh tự động bởi tools/build_pages.py từ mobile/assets/markdown/privacy_policy.md — đừng sửa tay. -->
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chính sách quyền riêng tư | Smart Laundry Locker</title>
+  <title>Chính sách bảo mật | Lock.R</title>
   <style>
-    :root { --navy: #1e293b; --accent: #2563eb; --muted: #64748b; }
+    :root { --navy: #003d5b; --accent: #0077b6; --muted: #64748b; --line: #e2e8f0; }
     * { box-sizing: border-box; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      color: var(--navy); line-height: 1.7; margin: 0; background: #f8fafc;
+      color: #0f172a; line-height: 1.7; margin: 0; background: #f8fafc;
     }
-    .wrap { max-width: 820px; margin: 0 auto; padding: 40px 24px 80px; background: #fff; }
-    h1 { font-size: 28px; margin-bottom: 4px; }
+    .wrap { max-width: 820px; margin: 0 auto; padding: 32px 24px 80px; background: #fff; }
+    nav { display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: 14px; margin-bottom: 24px; }
+    nav a { text-decoration: none; }
+    nav .lang { margin-left: auto; }
+    h1 { font-size: 28px; margin: 0 0 4px; color: var(--navy); }
     h2 { font-size: 20px; margin-top: 36px; color: var(--navy); }
     .updated { color: var(--muted); font-size: 14px; margin-bottom: 24px; }
     a { color: var(--accent); }
     ul { padding-left: 22px; }
-    code { background: #f1f5f9; padding: 1px 6px; border-radius: 4px; font-size: 90%; }
-    .box { background: #f1f5f9; border-left: 4px solid var(--accent); padding: 12px 16px; border-radius: 6px; margin: 16px 0; }
-    footer { margin-top: 48px; color: var(--muted); font-size: 13px; border-top: 1px solid #e2e8f0; padding-top: 16px; }
+    li { margin: 4px 0; }
+    footer { margin-top: 48px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); padding-top: 16px; }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <h1>Chính sách quyền riêng tư</h1>
-    <div class="updated">Smart Laundry Locker · Cập nhật lần cuối: 21/06/2026</div>
+    <nav>
+      <a href="terms-of-service.html">Điều khoản dịch vụ</a>
+      <a href="privacy-policy.html"><strong>Chính sách bảo mật</strong></a>
+      <a href="data-deletion.html">Hướng dẫn xoá dữ liệu</a>
+      <a class="lang" href="privacy-policy-en.html">English</a>
+    </nav>
+    <h1>Chính sách bảo mật</h1>
+    <div class="updated">Phiên bản 03/11/2026 · Áp dụng cho ứng dụng Lock.R, trang web Lock.R và kiosk tại tủ.</div>
+    <p>Chính sách này giải thích Lock.R ("chúng tôi") thu thập dữ liệu cá nhân nào, dùng vào việc gì, chia sẻ với ai và bạn có những quyền gì. Chính sách đi cùng <a href="terms-of-service.html">Điều khoản dịch vụ</a>.</p>
 
-    <p>
-      Chính sách này mô tả cách ứng dụng <strong>Smart Laundry Locker</strong> ("Ứng dụng",
-      "chúng tôi") thu thập, sử dụng và bảo vệ thông tin của bạn khi bạn đăng ký, đăng nhập
-      và sử dụng dịch vụ tủ khóa thông minh.
-    </p>
-
-    <h2>1. Thông tin chúng tôi thu thập</h2>
-    <p>Khi bạn tạo tài khoản hoặc đăng nhập, chúng tôi có thể thu thập:</p>
+    <h2>1. Dữ liệu chúng tôi thu thập</h2>
     <ul>
-      <li><strong>Thông tin nhận dạng</strong>: họ tên, địa chỉ email, số điện thoại.</li>
-      <li><strong>Thông tin từ đăng nhập mạng xã hội</strong>: khi bạn đăng nhập bằng
-        <em>Google</em> hoặc <em>Facebook</em>, chúng tôi nhận tên hiển thị, email, ảnh đại diện
-        công khai và một mã định danh người dùng do nhà cung cấp cấp (provider user ID). Chúng tôi
-        <strong>không</strong> truy cập mật khẩu mạng xã hội của bạn.</li>
-      <li><strong>Dữ liệu sử dụng dịch vụ</strong>: lịch sử đặt/thuê/gửi tủ, đơn hàng, thông báo,
-        và thông tin cần thiết để vận hành tủ khóa (mã PIN/QR tạm thời).</li>
-      <li><strong>Dữ liệu kỹ thuật</strong>: mã thiết bị thông báo (FCM token) để gửi thông báo.</li>
+      <li><strong>Tài khoản:</strong> họ tên, số điện thoại, email, ảnh đại diện, mật khẩu (chỉ lưu dạng đã mã hoá bcrypt).</li>
+      <li><strong>Đăng nhập bằng Google, Facebook hoặc số điện thoại:</strong> tên hiển thị, email, ảnh đại diện công khai và mã định danh do nhà cung cấp cấp. Chúng tôi không bao giờ nhận mật khẩu tài khoản mạng xã hội của bạn.</li>
+      <li><strong>Đơn hàng:</strong> tủ và ô đã dùng, thời gian, mã đơn, trạng thái, khối lượng kiện, hành trình drone, lịch sử thanh toán và hoàn tiền.</li>
+      <li><strong>Người nhận và người được uỷ quyền:</strong> họ tên, số điện thoại, email do người gửi nhập để giao mã lấy hàng. Người gửi cần có sự đồng ý của họ trước khi cung cấp.</li>
+      <li><strong>Thanh toán:</strong> số tiền, mã tham chiếu và kết quả giao dịch chuyển khoản. Chúng tôi không lưu số thẻ hay thông tin đăng nhập ngân hàng.</li>
+      <li><strong>Vị trí:</strong> khi bạn cho phép, để tìm tủ gần bạn, chỉ đường và gắn vị trí vào ảnh báo sự cố. Với kỹ thuật viên, vị trí chỉ được lấy trong ca làm việc.</li>
+      <li><strong>Máy ảnh, ảnh và Bluetooth:</strong> chỉ khi bạn dùng tính năng tương ứng: quét mã QR, chụp ảnh sự cố hoặc ảnh đại diện, mở ô tủ ở gần bằng Bluetooth.</li>
+      <li><strong>Trợ lý hỏi đáp:</strong> nội dung câu hỏi và câu trả lời; khi bạn hỏi về đơn, thông tin các đơn liên quan tới bạn.</li>
+      <li><strong>Kỹ thuật:</strong> mã thiết bị nhận thông báo (FCM token), ngôn ngữ ứng dụng, nhật ký lỗi và nhật ký truy cập máy chủ.</li>
     </ul>
 
     <h2>2. Mục đích sử dụng</h2>
     <ul>
-      <li>Xác thực và tạo/duy trì tài khoản của bạn.</li>
-      <li>Cung cấp dịch vụ tủ khóa: gửi hàng, thuê tủ, nhận hàng, ủy quyền nhận hộ.</li>
-      <li>Gửi thông báo liên quan đến đơn hàng và tài khoản.</li>
-      <li>Hỗ trợ khách hàng và xử lý sự cố.</li>
-      <li>Bảo mật, chống gian lận và tuân thủ pháp luật.</li>
+      <li>Tạo, xác thực và bảo vệ tài khoản.</li>
+      <li>Thực hiện dịch vụ: thuê ô, gửi và nhận hàng, giao drone, uỷ quyền, gửi mã mở tủ.</li>
+      <li>Xử lý thanh toán, hoàn tiền, sự cố và bồi thường.</li>
+      <li>Gửi thông báo về đơn hàng, mã lấy hàng, nhắc hạn và thay đổi tài khoản.</li>
+      <li>Hỗ trợ khách hàng và trả lời câu hỏi qua trợ lý.</li>
+      <li>Phát hiện gian lận, bảo đảm an toàn cho tủ, drone và người dùng, và tuân thủ pháp luật.</li>
     </ul>
+    <p>Chúng tôi không dùng dữ liệu của bạn để quảng cáo và không bán dữ liệu cho bất kỳ ai.</p>
 
-    <h2>3. Cơ sở xử lý &amp; chia sẻ với bên thứ ba</h2>
-    <p>Chúng tôi chỉ chia sẻ dữ liệu với các nhà cung cấp dịch vụ cần thiết để vận hành:</p>
+    <h2>3. Bên thứ ba nhận dữ liệu</h2>
+    <p>Chúng tôi chỉ chia sẻ phần dữ liệu cần thiết với các nhà cung cấp sau:</p>
     <ul>
-      <li><strong>Google Firebase Authentication</strong> – xác thực đăng nhập (số điện thoại, Google, Facebook).</li>
-      <li><strong>Google / Facebook</strong> – khi bạn chọn đăng nhập bằng các nền tảng này.</li>
-      <li><strong>Nhà cung cấp thanh toán</strong> (nếu bạn sử dụng tính năng thanh toán).</li>
+      <li><strong>Google Firebase, Google và Facebook:</strong> xác thực đăng nhập (số điện thoại, Google, Facebook) và gửi thông báo đẩy.</li>
+      <li><strong>SePay và ngân hàng:</strong> đối soát giao dịch chuyển khoản VietQR.</li>
+      <li><strong>Twilio và dịch vụ email:</strong> gửi mã mở tủ, mã OTP và thông tin đơn tới số điện thoại, email.</li>
+      <li><strong>Cloudinary:</strong> lưu ảnh đại diện và ảnh sự cố.</li>
+      <li><strong>Anthropic (Claude) và Voyage AI:</strong> xử lý câu hỏi gửi tới trợ lý.</li>
+      <li><strong>OpenStreetMap và OSRM:</strong> hiển thị bản đồ và tính đường đi; chỉ nhận toạ độ cần để vẽ bản đồ.</li>
+      <li><strong>Microsoft Azure và Cloudflare:</strong> máy chủ lưu trữ và vận hành hệ thống.</li>
     </ul>
-    <p>Chúng tôi <strong>không bán</strong> dữ liệu cá nhân của bạn cho bên thứ ba.</p>
+    <p>Chúng tôi cũng cung cấp dữ liệu cho cơ quan nhà nước có thẩm quyền khi pháp luật yêu cầu.</p>
 
-    <h2>4. Lưu trữ &amp; bảo mật</h2>
-    <p>
-      Dữ liệu được lưu trên máy chủ có kiểm soát truy cập. Mật khẩu (nếu có) được mã hóa bằng
-      bcrypt; chúng tôi không lưu mật khẩu dạng văn bản thuần. Dữ liệu được giữ trong thời gian
-      tài khoản còn hoạt động hoặc theo yêu cầu pháp luật.
-    </p>
-
-    <h2>5. Quyền của bạn</h2>
+    <h2>4. Nơi lưu trữ và bảo mật</h2>
     <ul>
-      <li>Truy cập, chỉnh sửa thông tin hồ sơ trong ứng dụng.</li>
-      <li>Yêu cầu xóa tài khoản và dữ liệu cá nhân – xem
-        <a href="data-deletion.html">Hướng dẫn xóa dữ liệu</a>.</li>
-      <li>Rút lại quyền đăng nhập mạng xã hội bất cứ lúc nào.</li>
+      <li>Dữ liệu được lưu trên máy chủ Microsoft Azure đặt tại Malaysia, nên có chuyển dữ liệu ra nước ngoài theo quy định pháp luật Việt Nam về bảo vệ dữ liệu cá nhân.</li>
+      <li>Kết nối được mã hoá HTTPS; quyền truy cập dữ liệu giới hạn theo vai trò; quản trị viên đăng nhập bằng xác thực hai lớp.</li>
+      <li>Không hệ thống nào an toàn tuyệt đối. Khi phát hiện sự cố lộ lọt dữ liệu, chúng tôi xử lý và thông báo cho bạn cùng cơ quan chức năng theo luật định.</li>
     </ul>
 
-    <h2>6. Trẻ em</h2>
-    <p>Ứng dụng dành cho người dùng từ 13 tuổi trở lên. Chúng tôi không cố ý thu thập dữ liệu của
-      trẻ em dưới độ tuổi này.</p>
+    <h2>5. Thời gian lưu trữ</h2>
+    <ul>
+      <li>Dữ liệu tài khoản được giữ trong thời gian tài khoản còn hoạt động.</li>
+      <li>Dữ liệu đơn hàng và giao dịch được giữ theo thời hạn pháp luật kế toán, thuế yêu cầu, kể cả sau khi bạn xoá tài khoản; khi đó dữ liệu được ẩn danh nếu có thể.</li>
+      <li>Ảnh sự cố, nhật ký kỹ thuật và lịch sử trò chuyện với trợ lý được xoá khi không còn cần cho mục đích đã nêu.</li>
+    </ul>
 
-    <h2>7. Thay đổi chính sách</h2>
-    <p>Chúng tôi có thể cập nhật chính sách này. Bản mới sẽ được đăng tại trang này kèm ngày cập nhật.</p>
+    <h2>6. Quyền của bạn</h2>
+    <ul>
+      <li>Xem và sửa thông tin hồ sơ ngay trong ứng dụng.</li>
+      <li>Rút lại quyền vị trí, máy ảnh, Bluetooth, thông báo trong cài đặt điện thoại bất kỳ lúc nào.</li>
+      <li>Yêu cầu cung cấp bản sao, hạn chế xử lý, phản đối xử lý hoặc xoá dữ liệu cá nhân.</li>
+      <li>Rút lại sự đồng ý. Khi rút lại, bạn sẽ không dùng tiếp được các tính năng cần dữ liệu đó.</li>
+      <li>Khiếu nại tới cơ quan có thẩm quyền nếu cho rằng quyền của bạn bị xâm phạm.</li>
+    </ul>
+    <p>Để yêu cầu xoá tài khoản và dữ liệu, xem <a href="https://lockr-tech.github.io/legal/data-deletion.html">Hướng dẫn xoá dữ liệu</a>. Chúng tôi phản hồi trong vòng 30 ngày.</p>
 
-    <h2>8. Liên hệ</h2>
-    <div class="box">
-      Mọi thắc mắc về quyền riêng tư, vui lòng liên hệ:<br />
-      <strong>Email:</strong> <a href="mailto:huynqbse180211@fpt.edu.vn">huynqbse180211@fpt.edu.vn</a>
-    </div>
+    <h2>7. Trẻ em</h2>
+    <p>Dịch vụ không dành cho người dưới 16 tuổi nếu không có sự đồng ý của cha mẹ hoặc người giám hộ. Nếu phát hiện đã thu thập dữ liệu của trẻ em mà chưa có sự đồng ý này, chúng tôi sẽ xoá dữ liệu đó.</p>
 
-    <footer>© 2026 Smart Laundry Locker. Tài liệu này áp dụng cho ứng dụng di động Smart Laundry Locker.</footer>
+    <h2>8. Thay đổi chính sách</h2>
+    <p>Khi chính sách thay đổi, chúng tôi cập nhật phiên bản ở đầu trang và thông báo trong ứng dụng. Thay đổi quan trọng sẽ yêu cầu bạn đồng ý lại.</p>
+
+    <h2>9. Liên hệ</h2>
+    <p>Mọi câu hỏi về dữ liệu cá nhân, gửi email tới <a href="mailto:huynqbse180211@fpt.edu.vn">huynqbse180211@fpt.edu.vn</a> hoặc dùng mục <strong>Liên hệ hỗ trợ</strong> trong ứng dụng.</p>
+
+    <footer>© 2026 Lock.R. Bản gốc của trang này là nội dung hiển thị trong ứng dụng Lock.R.</footer>
   </div>
 </body>
 </html>
